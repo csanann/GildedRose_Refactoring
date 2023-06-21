@@ -47,3 +47,9 @@ def test_backstage_passes_drop_to_zero():
   gilded_rose = GildedRose(items)
   gilded_rose.update_quality()
   assert items[0].quality == 0, "Quality of 'Backstage passes to a TAFKAL80ETC concert' should drop to zero after the concert"
+  
+def test_quality_never_negative():
+  items = [Item("foo", sell_in = 0, quality = 0)]
+  gilded_rose = GildedRose(items)
+  gilded_rose.update_quality()
+  assert items[0].quality >= 0, "Quality of an item is never negative"
