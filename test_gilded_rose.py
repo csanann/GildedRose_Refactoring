@@ -66,3 +66,9 @@ def test_sulfuras_never_decreases():
   gilded_rose.update_quality()
   assert items[0].quality == 80, "'Sulfuras' never decreases in quality"
   assert items[0].sell_in == 0, "'Sulfuras' never has to be sold"
+
+def test_aged_brie_increases_quality():
+  items = [Item("Aged Brie", sell_in = 2, quality = 0)]
+  gilded_rose = GildedRose(items)
+  gilded_rose.update_quality()
+  assert items[0].quality > 0, "'Aged Brie' should increase in Quality"
