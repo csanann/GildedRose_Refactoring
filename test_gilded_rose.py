@@ -59,3 +59,10 @@ def test_quality_never_more_than_50():
   gilded_rose = GildedRose(items)
   gilded_rose.update_quality()
   assert items[0].quality <= 50, "Quality of an item is never more than 50"
+
+def test_sulfuras_never_decreases():
+  items = [Item("Sulfuras, Hand of Ragnaros", sell_in = 0, quality = 80)]
+  gilded_rose = GildedRose(items)
+  gilded_rose.update_quality()
+  assert items[0].quality == 80, "'Sulfuras' never decreases in quality"
+  assert items[0].sell_in == 0, "'Sulfuras' never has to be sold"
