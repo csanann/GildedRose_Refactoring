@@ -91,3 +91,8 @@ def test_quality_above_50():
   gilded_rose.update_quality()
   assert items[0].quality == 50, "Quality of 'Aged Brie' should not exceed 50"
 
+def test_unknown_item():
+  items = [Item("foo", sell_in = 5, quality = 20)]
+  gilded_rose = GildedRose(items)
+  gilded_rose.update_quality()
+  assert items[0].quality == 19, "Quality of an unknown item should decrease by 1"
