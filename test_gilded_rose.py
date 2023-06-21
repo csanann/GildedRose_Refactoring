@@ -17,3 +17,10 @@ def test_aged_brie_increase_in_quality():
   gilded_rose = GildedRose(items)
   gilded_rose.update_quality()
   assert items[0].quality == 1, "Quality of 'Aged Brie' should increase by 1"
+  
+def test_sulfuras_never_changes():
+  items = [Item("Sulfuras, Hand of Ragnaros", sell_in = 0, quality = 80)]
+  gilded_rose = GildedRose(items)
+  gilded_rose.update_quality()
+  assert items[0].quality == 80, "Quality of 'Sulfuras, Hand of Rgnaros' should never change"
+  assert items[0].sell_in == 0, "Sell_in for 'Sulfuras, Hand of Rgnaros' should never change"
