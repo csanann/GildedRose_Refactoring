@@ -78,3 +78,9 @@ def test_quality_degrades_twice_as_fast():
   gilded_rose = GildedRose(items)
   gilded_rose.update_quality()
   assert items[0].quality == 48, "Quality should degrade twice as fast once the sell by date has passed"
+
+def test_negative_sell_in():
+  items = [Item("Elixir of the Mongoose", sell_in = -5, quality = 7)]
+  gilded_rose = GildedRose(items)
+  gilded_rose.update_quality()
+  assert items[0].quality == 5, "Quality of 'Elixir of the Mongoose' should decrease by 2 when sell_in is negative"
