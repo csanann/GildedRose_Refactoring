@@ -4,7 +4,6 @@ import pytest
 from gilded_rose import GildedRose, Item
 
 def test_update_quality():
-  #for unit test, we will use arrange, act and assert structure here
   items = [Item("Elixir of the Mongoose", sell_in = 5, quality = 7)]
   gilded_rose = GildedRose(items)
   
@@ -24,3 +23,10 @@ def test_sulfuras_never_changes():
   gilded_rose.update_quality()
   assert items[0].quality == 80, "Quality of 'Sulfuras, Hand of Rgnaros' should never change"
   assert items[0].sell_in == 0, "Sell_in for 'Sulfuras, Hand of Rgnaros' should never change"
+
+def test_backstage_passes_increase_in_quality():
+  items =[Item("Backstage passes to a TAFKAL80ETC concert", sell_in = 15, quality = 20)]
+  gilded_rose = GildedRose(items)
+  gilded_rose.update_quality()
+  assert items[0].quality == 21, "Quality of 'Backstage passes to a TAFKAL80ETC concert' should increase by 1"
+
