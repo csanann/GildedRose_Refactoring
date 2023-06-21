@@ -84,3 +84,10 @@ def test_negative_sell_in():
   gilded_rose = GildedRose(items)
   gilded_rose.update_quality()
   assert items[0].quality == 5, "Quality of 'Elixir of the Mongoose' should decrease by 2 when sell_in is negative"
+  
+def test_quality_above_50():
+  items = [Item("Aged Brie", sell_in = 2, quality = 55)]
+  gilded_rose = GildedRose(items)
+  gilded_rose.update_quality()
+  assert items[0].quality == 50, "Quality of 'Aged Brie' should not exceed 50"
+
