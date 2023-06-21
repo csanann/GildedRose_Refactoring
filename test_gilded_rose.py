@@ -96,3 +96,12 @@ def test_unknown_item():
   gilded_rose = GildedRose(items)
   gilded_rose.update_quality()
   assert items[0].quality == 19, "Quality of an unknown item should decrease by 1"
+
+def test_update_quality_over_multiple_days():
+  items = [Item("Elixir of the Mongoose", sell_in = 5, quality = 7)]
+  gilded_rose = GildedRose(items)
+  
+  for _ in range(5):
+    gilded_rose.update_quality()
+  
+  assert items[0].quality == 2, "Quality of 'Elixir of the Mongoose' should decrease by 1 per day"
