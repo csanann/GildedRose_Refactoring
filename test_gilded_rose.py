@@ -72,3 +72,9 @@ def test_aged_brie_increases_quality():
   gilded_rose = GildedRose(items)
   gilded_rose.update_quality()
   assert items[0].quality > 0, "'Aged Brie' should increase in Quality"
+
+def test_quality_degrades_twice_as_fast():
+  items = [Item("foo", sell_in = 0, quality = 50)]
+  gilded_rose = GildedRose(items)
+  gilded_rose.update_quality()
+  assert items[0].quality == 48, "Quality should degrade twice as fast once the sell by date has passed"
