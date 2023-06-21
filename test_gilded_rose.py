@@ -53,3 +53,9 @@ def test_quality_never_negative():
   gilded_rose = GildedRose(items)
   gilded_rose.update_quality()
   assert items[0].quality >= 0, "Quality of an item is never negative"
+
+def test_quality_never_more_than_50():
+  items = [Item("Aged Brie", sell_in = 2, quality = 50)]
+  gilded_rose = GildedRose(items)
+  gilded_rose.update_quality()
+  assert items[0].quality <= 50, "Quality of an item is never more than 50"
