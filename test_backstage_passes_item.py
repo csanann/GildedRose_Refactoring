@@ -16,3 +16,8 @@ def test_backstage_passes_increase_in_quality_by_2():
   gilded_rose.update_quality()
   assert items[0].quality == 22, "Quality of 'Backstage passes to a TAFKAL80ETC concert' should increase by 2 when there are 10 days"
   
+def test_backstage_passes_increase_in_quality_by_3():
+  items = [BackstagePassesItem("Backstage passes to a TAFKAL80ETC concert", sell_in = 3, quality = 5)]
+  gilded_rose = GildedRose(items)
+  gilded_rose.update_quality()
+  assert items[0].quality == 8, "Quality of 'Backstage passes to a TAFKAL80ETC concert' should increase by 3 when there are 5 days or less"
