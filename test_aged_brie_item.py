@@ -22,3 +22,9 @@ def test_aged_brie_increase_in_quality():
   gilded_rose.update_quality()
   assert items[0].quality == 21, "Quality of 'Aged Brie' should increase by 1"
   assert items[0].sell_in == 14, "Sell in days should decrease by 1"
+  
+def test_aged_brie_quality_never_more_than_50():
+  items = [AgedBrieItem("Aged Brie", sell_in=15, quality=50)]
+  gilded_rose = GildedRose(items)
+  gilded_rose.update_quality()
+  assert items[0].quality == 50, "'Aged Brie' quality should not increase beyond 50"
