@@ -1,7 +1,7 @@
 #file: test_glided_rose.py
 
 import pytest
-from gilded_rose import GildedRose, Item
+from src.gilded_rose import GildedRose, Item
 
 def test_update_quality():
   items = [Item("Elixir of the Mongoose", sell_in = 5, quality = 7)]

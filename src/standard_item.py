@@ -1,6 +1,6 @@
 #file: standard_item.py
 
-from gilded_rose import Item
+from src.gilded_rose import Item
 
 class StandardItem(Item):
   def update_quality(self):

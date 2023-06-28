@@ -1,7 +1,7 @@
 #file: test_backstage_passes_item.py
 
-from gilded_rose import GildedRose
-from backstage_passes_item import BackstagePassesItem
+from src.gilded_rose import GildedRose
+from src.backstage_passes_item import BackstagePassesItem
 
 def test_backstage_passes_increase_in_quality():
   items = [BackstagePassesItem("Backstage passes to a TAFKAL80ETC concert", sell_in = 15, quality = 20)]

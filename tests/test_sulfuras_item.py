@@ -1,7 +1,7 @@
 #file: test_sulfuras_item.py
 
-from gilded_rose import GildedRose
-from sulfuras_item import SulfurasItem
+from src.gilded_rose import GildedRose
+from src.sulfuras_item import SulfurasItem
 
 def test_sulfuras_never_decreases_in_quality():
   items = [SulfurasItem("Sulfuras, Hand of Ragnaros", sell_in = 0, quality = 80)]

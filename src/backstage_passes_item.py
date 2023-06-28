@@ -1,6 +1,6 @@
 #file: backstage_passes_item.py
 
-from standard_item import StandardItem
+from src.standard_item import StandardItem
 
 
 class BackstagePassesItem:

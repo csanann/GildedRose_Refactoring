@@ -1,7 +1,7 @@
 #file: test_aged_brie_item.py
 
-from aged_brie_item import AgedBrieItem
-from gilded_rose import GildedRose
+from src.aged_brie_item import AgedBrieItem
+from src.gilded_rose import GildedRose
 
 def test_aged_brie_item():
   items = [AgedBrieItem("Aged Brie", sell_in = 2, quality = 0)]

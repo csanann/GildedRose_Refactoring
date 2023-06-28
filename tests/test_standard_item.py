@@ -1,7 +1,7 @@
 #file: test_standard_item.py
 
-from standard_item import StandardItem
-from gilded_rose import GildedRose
+from src.standard_item import StandardItem
+from src.gilded_rose import GildedRose
 
 
 def test_standard_item():
