@@ -31,4 +31,4 @@ def test_integration():
 
   assert items[4].name == "Conjured Mana Cake"
   assert items[4].sell_in == 2
-  assert items[4].quality == 5
+  assert items[4].quality == 5 #4 when quality - 2 as fast

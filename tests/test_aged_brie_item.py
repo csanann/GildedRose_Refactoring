@@ -35,3 +35,4 @@ def test_aged_brie_quality_increase_twice_as_fast():
   gilded_rose.update_quality()
   assert items[0].quality == 21, "Quality of 'Aged Brie' should increase by 2 when sell_in is less than 0"
   assert items[0].sell_in == -2, "Sell in days should decrease by 1"
+  

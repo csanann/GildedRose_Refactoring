@@ -1,6 +1,6 @@
 # test_items.py
 
-from src.items import AgedBrieItem, ElixirOfTheMongooseItem, SulfurasItem, BackstagePassesItem, RegularItem
+from src.items import AgedBrieItem, ElixirOfTheMongooseItem, SulfurasItem, BackstagePassesItem, RegularItem, ConjuredItem
 
 def test_aged_brie_item():
   item = AgedBrieItem("Aged Brie", 2, 0)
@@ -31,3 +31,20 @@ def test_regular_item():
   item.update_quality()
   assert item.quality == 19, "Quality of a regular item should decrease by 1"
   assert item.sell_in == 14, "Sell in days should decrease by 1"
+
+def test_conjured_item():
+  item = ConjuredItem("Conjured Mana Cake", 3, 6)
+  item.update_quality()
+  assert item.name == "Conjured Mana Cake"
+  assert item.sell_in == 2
+  assert item.quality == 4
+  
+  item.update_quality()
+  assert item.name == "Conjured Mana Cake"
+  assert item.sell_in == 1
+  assert item.quality == 2
+  
+  item.update_quality()
+  assert item.name == "Conjured Mana Cake"
+  assert item.sell_in == 0
+  assert item.quality == 0
